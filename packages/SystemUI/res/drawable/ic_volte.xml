@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- Copyright (c) 2017, The Linux Foundation. All rights reserved.
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are
- met:
-        * Redistributions of source code must retain the above copyright
-        notice, this list of conditions and the following disclaimer.
-        * Redistributions in binary form must reproduce the above
-        copyright notice, this list of conditions and the following
-        disclaimer in the documentation and/or other materials provided
-        with the distribution.
-        * Neither the name of The Linux Foundation nor the names of its
-        contributors may be used to endorse or promote products derived
-        from this software without specific prior written permission.
- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
- ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:height="24dp"
-        android:width="30.5dp"
-        android:viewportWidth="30.57"
-        android:viewportHeight="24.0">
+     Copyright (c) 2019 PixysOS
 
-    <path
-        android:fillColor="#ffffffff"
-        android:pathData="M10.62,13.14 A0.42,0.42,0,0,0,10.23,13.36 A1.29,1.29,0,0,0,10.23,14.47 A0.45,0.45,0,0,0,11.01,14.47 A1.29,1.29,0,0,0,11.01,13.36 A0.42,0.42,0,0,0,10.62,13.14 Z" />
-    <path
-        android:fillColor="#ffffffff"
-        android:pathData="M28.54,5.6 L2.06,5.6 A1.11,1.11,0,0,0,0.95,6.71 L0.95,18.24 A1.11,1.11,0,0,0,2.06,19.35 L28.54,19.35 A1.11,1.11,0,0,0,29.65,18.24 L29.65,6.71 A1.11,1.11,0,0,0,28.54,5.6 Z M5.31,15.6 L3.43,9.84 L4.94,9.84 L6.18,14.05 L7.42,9.84 L8.82,9.84 L6.94,15.59 L5.31,15.59 Z M12.19,14.85 A1.46,1.46,0,0,1,11.56,15.43 A2.11,2.11,0,0,1,10.61,15.63 A2.13,2.13,0,0,1,9.66,15.43 A1.45,1.45,0,0,1,9,14.83 A2,2,0,0,1,9,13 A1.45,1.45,0,0,1,9.63,12.42 A2.13,2.13,0,0,1,10.58,12.22 A2.11,2.11,0,0,1,11.53,12.42 A1.46,1.46,0,0,1,12.16,13 A2,2,0,0,1,12.2,14.83 Z M13.1,12.85 A0.4,0.4,0,0,1,12.57,12.65 A1.76,1.76,0,0,0,11.23,11.77 A0.4,0.4,0,0,1,10.87,11.33 A0.4,0.4,0,0,1,11.31,10.97 A2.57,2.57,0,0,1,13.31,12.32 A0.4,0.4,0,0,1,13.1,12.8 Z M14.29,11.93 A0.5,0.5,0,0,1,13.62,11.7 A2.66,2.66,0,0,0,11.51,10.37 A0.5,0.5,0,0,1,11.56,9.37 A3.66,3.66,0,0,1,14.56,11.26 A0.5,0.5,0,0,1,14.29,11.88 Z M18.56,15.6 L14.9,15.6 L14.9,9.81 L16.33,9.81 L16.33,14.39 L18.55,14.39 L18.55,15.55 Z M22.56,10.98 L21,10.98 L21,15.6 L19.58,15.6 L19.58,10.94 L18,10.94 L18,9.81 L22.54,9.81 L22.54,10.94 Z M27.16,15.6 L23.16,15.6 L23.16,9.81 L27.03,9.81 L27.03,10.92 L24.64,10.92 L24.64,12 L26.91,12 L26.91,13.13 L24.64,13.13 L24.64,14.4 L27.17,14.4 L27.17,15.55 Z" />
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+        <path
+            android:pathData="M 18.5 12.565 L 5.5 12.565 C 5.235 12.565 4.98 12.67 4.793 12.858 C 4.605 13.045 4.5 13.3 4.5 13.565 L 4.5 19.565 C 4.5 19.83 4.605 20.085 4.793 20.272 C 4.98 20.46 5.235 20.565 5.5 20.565 L 18.5 20.565 C 18.765 20.565 19.02 20.46 19.207 20.272 C 19.395 20.085 19.5 19.83 19.5 19.565 L 19.5 13.565 C 19.5 13.3 19.395 13.045 19.207 12.858 C 19.02 12.67 18.765 12.565 18.5 12.565 Z M 10.08 17.945 L 10.08 18.765 L 7.4 18.765 L 7.4 14.365 L 8.23 14.365 L 8.23 17.935 L 10.08 17.935 L 10.08 17.945 Z M 13.2 15.195 L 12 15.195 L 12 18.765 L 11.1 18.765 L 11.1 15.195 L 9.93 15.195 L 9.93 14.395 L 13.2 14.395 L 13.2 15.195 Z M 16.6 15.195 L 14.67 15.195 L 14.67 16.195 L 16.42 16.195 L 16.42 17.005 L 14.67 17.005 L 14.67 18.005 L 16.6 18.005 L 16.6 18.805 L 13.83 18.805 L 13.83 14.405 L 16.6 14.405 L 16.6 15.195 Z M 8.37 11.295 L 10.85 5.565 L 9.46 5.565 L 7.99 9.025 L 7.72 9.755 L 7.64 9.755 L 7.4 9.025 L 6 5.565 L 4.6 5.565 L 7.01 11.295 L 8.37 11.295 Z M 14.46 11.325 C 15.043 11.325 15.612 11.148 16.092 10.818 C 16.573 10.488 16.942 10.019 17.15 9.475 C 17.181 9.39 17.208 9.303 17.23 9.215 L 17.23 9.165 L 16.08 9.165 C 15.944 9.481 15.718 9.751 15.43 9.939 C 15.142 10.128 14.804 10.227 14.46 10.225 C 13.985 10.225 13.53 10.036 13.194 9.701 C 12.859 9.365 12.67 8.91 12.67 8.435 C 12.67 8.091 12.771 7.755 12.959 7.467 C 13.147 7.18 13.415 6.953 13.73 6.815 L 13.73 5.665 C 13.2 5.792 12.719 6.074 12.35 6.475 C 11.839 7.014 11.559 7.732 11.57 8.475 C 11.583 9.233 11.893 9.957 12.433 10.49 C 12.973 11.022 13.701 11.322 14.46 11.325 Z"
+            android:fillColor="#000"
+            android:strokeWidth="1"/>
+        <path
+            android:pathData="M 14.5 7.805 C 14.333 7.805 14.173 7.871 14.055 7.99 C 13.936 8.108 13.87 8.268 13.87 8.435 C 13.87 8.602 13.936 8.762 14.055 8.88 C 14.173 8.999 14.333 9.065 14.5 9.065 C 14.667 9.065 14.827 8.999 14.945 8.88 C 15.064 8.762 15.13 8.602 15.13 8.435 C 15.13 8.268 15.064 8.108 14.945 7.99 C 14.827 7.871 14.667 7.805 14.5 7.805 Z M 16.24 8.355 L 17.34 8.355 C 17.325 7.621 17.028 6.92 16.51 6.399 C 15.993 5.878 15.294 5.575 14.56 5.555 L 14.56 6.655 C 15.002 6.677 15.419 6.864 15.73 7.179 C 16.041 7.493 16.223 7.913 16.24 8.355 Z M 18.4 8.055 L 19.45 8.055 C 19.471 6.89 19.043 5.761 18.257 4.901 C 17.47 4.042 16.382 3.517 15.22 3.435 L 15.16 3.435 L 15.16 4.505 C 16.052 4.569 16.886 4.973 17.488 5.633 C 18.091 6.294 18.418 7.161 18.4 8.055 Z"
+            android:fillColor="#000"
+            android:strokeWidth="1"/>
 </vector>
+
