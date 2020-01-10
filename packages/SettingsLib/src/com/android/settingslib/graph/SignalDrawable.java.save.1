@@ -232,25 +232,36 @@ public class SignalDrawable extends DrawableWrapper {
             mCutoutPath.addRect(x - dotPadding, y - dotPadding, x + dotSize + dotPadding,
                     y + dotSize + dotPadding, Direction.CW);
         }
+        return ret;
+    }
+
+    @Override
+    public int getAlpha() {
+        return mPaint.getAlpha();
     }
 
     @Override
     public void setAlpha(@IntRange(from = 0, to = 255) int alpha) {
-        super.setAlpha(alpha);
+        mPaint.setAlpha(alpha);
         mForegroundPaint.setAlpha(alpha);
     }
 
     @Override
     public void setColorFilter(@Nullable ColorFilter colorFilter) {
-        super.setColorFilter(colorFilter);
+        mPaint.setColorFilter(colorFilter);
         mForegroundPaint.setColorFilter(colorFilter);
     }
 
     @Override
+    public int getOpacity() {
+        return 255;
+    }
+
+    @Override
     public boolean setVisible(boolean visible, boolean restart) {
-        boolean changed = super.setVisible(visible, restart);
+        mVisible = visible;
         updateAnimation();
-        return changed;
+        return super.setVisible(visible, restart);
     }
 
     private final Runnable mChangeDot = new Runnable() {
@@ -264,17 +275,16 @@ public class SignalDrawable extends DrawableWrapper {
         }
     };
 
-    /**
-     * Returns whether this drawable is in the specified state.
-     *
-     * @param state must be one of {@link #STATE_CARRIER_CHANGE} or {@link #STATE_CUT}
-     */
-    private boolean isInState(int state) {
-        return getState(getLevel()) == state;
+    public static int getLevel(int fullState) {
+        return fullState & LEVEL_MASK;
     }
 
     public static int getState(int fullState) {
         return (fullState & STATE_MASK) >> STATE_SHIFT;
+    }
+
+    public static int getNumLevels(int fullState) {
+        return (fullState & NUM_LEVEL_MASK) >> NUM_LEVEL_SHIFT;
     }
 
     public static int getState(int level, int numLevels, boolean cutOut) {
@@ -283,14 +293,74 @@ public class SignalDrawable extends DrawableWrapper {
                 | level;
     }
 
-    /** Returns the state representing empty mobile signal with the given number of levels. */
-    public static int getEmptyState(int numLevels) {
-        // TODO empty state == 0 state. does there need to be a new drawable for this?
-        return getState(0, numLevels, false);   
-    }
-
-    /** Returns the state representing carrier change with the given number of levels. */
     public static int getCarrierChangeState(int numLevels) {
         return (STATE_CARRIER_CHANGE << STATE_SHIFT) | (numLevels << NUM_LEVEL_SHIFT);
+    }
+
+    public static int getEmptyState(int numLevels) {
+        return (STATE_EMPTY << STATE_SHIFT) | (numLevels << NUM_LEVEL_SHIFT);
+    }
+
+    public static int getAirplaneModeState(int numLevels) {
+        return (STATE_AIRPLANE << STATE_SHIFT) | (numLevels << NUM_LEVEL_SHIFT);
+    }
+
+    private final class SlashArtist {
+        private static final float CORNER_RADIUS = 1f;
+        // These values are derived in un-rotated (vertical) orientation
+        private static final float SLASH_WIDTH = 1.8384776f;
+        private static final float SLASH_HEIGHT = 22f;
+        private static final float CENTER_X = 10.65f;
+        private static final float CENTER_Y = 15.869239f;
+        private static final float SCALE = 24f;
+
+        // Bottom is derived during animation
+        private static final float LEFT = (CENTER_X - (SLASH_WIDTH / 2)) / SCALE;
+        private static final float TOP = (CENTER_Y - (SLASH_HEIGHT / 2)) / SCALE;
+        private static final float RIGHT = (CENTER_X + (SLASH_WIDTH / 2)) / SCALE;
+        private static final float BOTTOM = (CENTER_Y + (SLASH_HEIGHT / 2)) / SCALE;
+        // Draw the slash washington-monument style; rotate to no-u-turn style
+        private static final float ROTATION = -45f;
+
+        private final Path mPath = new Path();
+        private final RectF mSlashRect = new RectF();
+
+        void draw(int height, int width, @NonNull Canvas canvas, Paint paint) {
+            Matrix m = new Matrix();
+            final float radius = scale(CORNER_RADIUS, width);
+            updateRect(
+                    scale(LEFT, width),
+                    scale(TOP, height),
+                    scale(RIGHT, width),
+                    scale(BOTTOM, height));
+
+            mPath.reset();
+            // Draw the slash vertically
+            mPath.addRoundRect(mSlashRect, radius, radius, Direction.CW);
+            m.setRotate(ROTATION, width / 2, height / 2);
+            mPath.transform(m);
+            canvas.drawPath(mPath, paint);
+
+            // Rotate back to vertical, and draw the cut-out rect next to this one
+            m.setRotate(-ROTATION, width / 2, height / 2);
+            mPath.transform(m);
+            m.setTranslate(mSlashRect.width(), 0);
+            mPath.transform(m);
+            mPath.addRoundRect(mSlashRect, radius, radius, Direction.CW);
+            m.setRotate(ROTATION, width / 2, height / 2);
+            mPath.transform(m);
+            canvas.clipOutPath(mPath);
+        }
+
+        void updateRect(float left, float top, float right, float bottom) {
+            mSlashRect.left = left;
+            mSlashRect.top = top;
+            mSlashRect.right = right;
+            mSlashRect.bottom = bottom;
+        }
+
+        private float scale(float frac, int width) {
+            return frac * width;
+        }
     }
 }
