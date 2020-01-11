@@ -62,6 +62,7 @@ import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
 import com.android.systemui.qs.tiles.ThemeTile;
 import com.android.systemui.qs.tiles.SmartPixelsTile;
+import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.UserTile;
 import com.android.systemui.qs.tiles.VolumeTile;
 import com.android.systemui.qs.tiles.VpnTile;
@@ -174,6 +175,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new GamingModeTile(mHost);
             case "vpn":
                 return new VpnTile(mHost);
+            case "dark":
+                return new UiModeNightTile(mHost);
         }
 
         // Intent tiles.

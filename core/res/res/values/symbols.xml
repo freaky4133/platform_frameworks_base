@@ -1428,6 +1428,8 @@
   <java-symbol type="drawable" name="ic_sim_card_multi_48px_clr" />
   <java-symbol type="drawable" name="ic_signal_cellular_alt_24px" />
 
+  <java-symbol type="drawable" name="ic_qs_ui_mode_night" />
+
   <java-symbol type="drawable" name="stat_notify_mmcc_indication_icn" />
   <java-symbol type="drawable" name="autofilled_highlight"/>
   <java-symbol type="drawable" name="ic_camera" />

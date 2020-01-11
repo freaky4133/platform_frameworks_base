@@ -108,7 +108,7 @@
     <bool name="quick_settings_wide">false</bool>
 
     <!-- The number of columns in the QuickSettings -->
-    <integer name="quick_settings_num_columns">3</integer>
+    <integer name="quick_settings_num_columns">4</integer>
 
     <!-- The number of rows in the QuickSettings -->
     <integer name="quick_settings_num_rows">1</integer>
@@ -118,12 +118,12 @@
 
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_default" translatable="false">
-        wifi,bt,dnd,flashlight,rotation,battery,cell,airplane,cast
+        wifi,cell,bt,hotspot,airplane,dnd,flashlight,rotation,battery,cast,sound,reboot
     </string>
 
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-        wifi,cell,lte,battery,dnd,flashlight,rotation,bt,airplane,nfc,location,hotspot,inversion,saver,work,cast,night,sound,caffeine,reboot,screenshot,heads_up,usb_tether,theme,gaming,expanded_desktop,hwkeys,smartpixels,adb_network,compass,onehand,soundsearch,always_on_display,music,sync,ambient_display,volume_panel,reading_mode,font,vpn
+        wifi,cell,lte,battery,dnd,flashlight,rotation,bt,airplane,nfc,location,hotspot,dark,inversion,saver,work,cast,night,sound,caffeine,reboot,screenshot,heads_up,usb_tether,theme,gaming,expanded_desktop,hwkeys,smartpixels,adb_network,compass,onehand,soundsearch,always_on_display,music,sync,ambient_display,volume_panel,reading_mode,font,vpn
     </string>
 
     <!-- The tiles to display in QuickSettings -->
